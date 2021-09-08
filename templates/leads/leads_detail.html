@@ -1,0 +1,10 @@
+{% extends 'Base.html' %}
+<!-- Current Page Title -->
+{% block title %}Detail view{% endblock title %}
+<!-- -->
+
+{% block content %}
+<h2>Welcome `{{lead.first_name}}`</h2>
+<p>Your agent is {{lead.agent}}</p>
+
+{% endblock content %}

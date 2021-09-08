@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{% block title %}CRM BASE{% endblock title %}</title>
+  <style>
+    .lead {
+      border-style: dotted;
+    }
+  </style>
+</head>
+
+<body>
+  <div>
+    {% block navLink %}
+    <p><a href="{% url 'leadList'  %}">Go back</a></p>
+    {% endblock navLink %}
+
+    <hr />
+    {% block content %}{% endblock content %}
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,17 @@
+{% extends 'Base.html' %}
+<!-- Current Page Title -->
+{% block title %}List of Leads{% endblock title %}
+<!-- -->
+{% block navLink %}
+<p><a href="{% url 'leadCreate'  %}">Create</a></p>
+{% endblock navLink %}
+{% block content %}
+<h2>List of all Leads</h2>
+
+{% for lead in leads %}
+<div class="lead">
+  <h3>Name: {{lead.first_name}} {{lead.last_name}}</h3>
+  <p><a href="{{lead.id}}">Click to see Agent</a></p>
+</div>
+{% endfor %}
+{% endblock content %}
