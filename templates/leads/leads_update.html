@@ -1,0 +1,20 @@
+{% extends 'Base.html' %}
+<!-- Current Page Title -->
+{% block title %}Update Lead{% endblock title %}
+<!-- -->
+{% block navLink %}
+<p><a href="{% url 'leadList'  %}">Home</a> ||
+    <a href="{% url 'leadDetail' lead.pk  %}">Go back</a>
+</p>
+{% endblock navLink %}
+{% block content %}
+<h2>Welcome `{{lead.first_name}}`</h2>
+<div>
+    <form method="POST">
+        {% csrf_token %}
+        {{form.as_p}}
+        <button type="submit">Update</button>
+    </form>
+</div>
+
+{% endblock content %}

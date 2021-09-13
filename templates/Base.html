@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,22 +8,18 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>{% block title %}CRM BASE{% endblock title %}</title>
-  <style>
-    .lead {
-      border-style: dotted;
-    }
-  </style>
+  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'css/crm.css' %}">
+
 </head>
 
 <body>
-  <div>
-    {% block navLink %}
-    <p><a href="{% url 'leadList'  %}">Go back</a></p>
-    {% endblock navLink %}
-
+  <div class="max-w-4xl mx-auto ">
     <hr />
+    {% include "navbar.html" %}
     {% block content %}{% endblock content %}
   </div>
+  {% include "scripts.html" %}
 </body>
 
 </html>

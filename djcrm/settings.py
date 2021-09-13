@@ -131,9 +131,22 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+STATICFILES_DIRS = [
+    BASE_DIR/"static"
+]
+STATIC_ROOT = "static_root"
 
 # Saying django we have custom user model
 AUTH_USER_MODEL = 'leads.User'
+
+# NOTE: adding routing profile after user login
+LOGIN_REDIRECT_URL = '/leads'
+LOGIN_URL = '/login'
+# NOTE: we added a page called logged_out.html, that was going to that page, by using below the moment we logout it will come to login page so we wont need that mage anymore
+LOGOUT_REDIRECT_URL = '/login'
+
+#  EMAIL setup
+EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 
 # Handling Logging
 

@@ -6,5 +6,10 @@
 {% block content %}
 <h2>Welcome `{{lead.first_name}}`</h2>
 <p>Your agent is {{lead.agent}}</p>
-
+<hr>
+<div>
+    <p><a href="{% url 'leadUpdate' lead.pk %}">Edit</a> ||
+        <a href="{% url 'leadDelete' lead.pk %}">Delete</a>
+    </p>
+</div>
 {% endblock content %}
